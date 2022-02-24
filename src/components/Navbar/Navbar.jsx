@@ -5,12 +5,13 @@ import Typography from '@mui/material/Typography'
 import MenuIcon from '@material-ui/icons/Menu'
 import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
+import CartWidget from '../CartWidget/CartWidget'
 
 
 const Navbar = () => {
   return (
     <div>
-        <AppBar position="relative" color="primary">
+        <AppBar position="relative" color="secondary">
           <Toolbar>
               <IconButton>
                   <MenuIcon />
@@ -34,6 +35,7 @@ const Navbar = () => {
             New
             </Button>
           </Toolbar>
+          <CartWidget />
         </AppBar>
     </div>
   )

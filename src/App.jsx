@@ -1,9 +1,10 @@
 import React from "react";
 import Button from '@mui/material/Button'
 import {ThemeProvider} from '@material-ui/core/styles'
-import Navbar from "./components/Navbar";
-import Typography from '@material-ui/core/Typography'
+import Navbar from "./components/Navbar/Navbar";
 import {makeStyles} from '@material-ui/core/styles'
+import Listas from "./components/Listas/Listas";
+import Oculto from "./components/Oculto";
 
 const useStyle = makeStyles({
   boton1: {
@@ -31,10 +32,10 @@ function App() {
       <Button variant="contained" color="secondary" className={classes.boton1}>
         Old Collections
       </Button>
-      <Typography variant="h1" color="initial">
-      
-      </Typography>
+      <Listas />
+      <Oculto/>
     </ThemeProvider>
+    
   );
 }
 
