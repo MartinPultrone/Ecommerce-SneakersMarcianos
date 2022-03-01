@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import {makeStyles} from '@material-ui/core/styles'
 import Listas from "./components/Listas/Listas";
 import Oculto from "./components/Oculto";
+import ItemCount from "./components/ItemCount/ItemCount";
 
 const useStyle = makeStyles({
   boton1: {
@@ -34,6 +35,7 @@ function App() {
       </Button>
       <Listas />
       <Oculto/>
+      <ItemCount/>
     </ThemeProvider>
     
   );
