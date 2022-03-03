@@ -16,7 +16,7 @@ const Navbar = () => {
               <IconButton>
                   <MenuIcon />
               </IconButton>
-            <Typography variant="h6">
+            <Typography variant="h5">
               Marcianos Sneakers
             </Typography>
             <Button variant="text" color="default">
@@ -34,8 +34,8 @@ const Navbar = () => {
             <Button variant="text" color="default">
             New
             </Button>
+            <CartWidget/>
           </Toolbar>
-          <CartWidget />
         </AppBar>
     </div>
   )
