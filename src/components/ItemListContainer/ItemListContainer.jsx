@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { getFetch } from "../../helpers/getFetch";
+import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
+
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
@@ -9,7 +12,7 @@ function ItemListContainer() {
     useEffect(() => {
         getFetch
             .then((respuesta) => {
-                console.log(respuesta); 
+                console.log(respuesta);
                 return respuesta;
             })
             .then((resp) => setProductos(resp))
@@ -17,34 +20,30 @@ function ItemListContainer() {
             .finally(() => setLoading(false));
     }, []);
 
+    const onAdd = (cant) => {
+        console.log(cant)
+    }
+
+
+    // useEffect(() => {
+    //     let url = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=200'
+    //     fetch(url)
+    //         .then(resp => resp.json())
+    //         .then(resp => console.log(resp))
+    // })
+
     console.log(productos)
 
     return (
-        <div>
-            { loading ? <h1>Cargando...</h1>
-            :
-            
-            productos.map((prod) => <div
-                key={prod.id}
-                className='col-md-4'
-            >
-                <div className="card w-100 mt-5" >
-                    <div className="card-header">
-                        {`${prod.name} - ${prod.categoria}`}
-                    </div>
-                    <div className="card-body">
-                        <img src={prod.foto} alt='' className='w-50' />
-                        {prod.price}
-                    </div>
-                    <div className="card-footer">
-                        <button className="btn btn-outline-primary btn-block">
-                            Detalle Del Producto
-                        </button>
-                    </div>
-                </div>
-            </div>
-            )}
-        </div>
+        <>
+            {loading ? <h1>Cargando...</h1>
+                :
+
+                <ItemList productos={productos} />
+
+            }
+            <ItemCount initial={0} stock={10} onAdd={onAdd} />
+        </>
     )
 }
 

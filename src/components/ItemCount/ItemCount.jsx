@@ -1,22 +1,31 @@
-import React from "react";
-import { useState } from "react";
-import './ItemCount.css'
+import {useState} from 'react'
 
-function ItemCount() {
-    const [count, setCount] = useState(0);
+const ItemCount = ({ initial, stock, onAdd }) => {
+    const [ count, setCount ] = useState(initial)
+
+    const sumar = () => {
+        if (count < stock) {
+            setCount( count + 1 )
+        }
+    }
+    const restar = () => {
+        if (count > initial) {
+            setCount( count - 1 )
+        }
+    }
+
+    const agregar = () => {
+        onAdd( count )
+    }
 
     return (
-        <div className="app">
-            { }
-            <h1 className={count > 0 ? "positive" : count < 0 ? "negative" : null}>
-                {count}
-            </h1>
-            <div className="button__wrapper">
-                <button onClick={() => setCount(count - 1)}>-</button>
-                <button onClick={() => setCount(count + 1)}>+</button>
-            </div>
+        <div>
+            <button onClick={restar}> - </button>
+            <label> { count } </label>
+            <button onClick={sumar}> + </button><br />
+            <button onClick={ agregar }>Add to Cart</button>
         </div>
-    );
+    )
 }
 
-export default ItemCount;
+export default ItemCount
