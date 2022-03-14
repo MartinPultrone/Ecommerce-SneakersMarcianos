@@ -6,37 +6,49 @@ import MenuIcon from '@material-ui/icons/Menu'
 import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import CartWidget from '../CartWidget/CartWidget'
+import { NavLink } from 'react-router-dom'
+import './Navbar.css'
 
 
 const Navbar = () => {
   return (
     <div>
-        <AppBar position="relative" color="secondary">
-          <Toolbar>
-              <IconButton>
-                  <MenuIcon />
-              </IconButton>
-            <Typography variant="h5">
-              Marcianos Sneakers
-            </Typography>
+      <AppBar position="relative" color="secondary">
+        <Toolbar>
+          <IconButton>
+            <MenuIcon />
+          </IconButton>
+          <NavLink to="/" className="underline">
+          <Typography variant="h5">
+            Marcianos Sneakers
+          </Typography>
+          </NavLink>
+          <NavLink to="/" className="underline">
             <Button variant="text" color="default">
-            Home
+              Home
             </Button>
-            <Button variant="text" color="default">
-            Featured
-            </Button>
-            <Button variant="text" color="default">
+          </NavLink>
+          <NavLink to="categoria/women" className="underline">
+          <Button variant="text" color="default">
             Women Sneakers
-            </Button>
-            <Button variant="text" color="default">
+          </Button>
+          </NavLink>
+          <NavLink to="categoria/men" className="underline">
+          <Button variant="text" color="default">
             Men Sneakers
-            </Button>
-            <Button variant="text" color="default">
+          </Button>
+          </NavLink>
+          <NavLink to="categoria/new" className="underline">
+          <Button variant="text" color="default">
             New
-            </Button>
-            <CartWidget/>
-          </Toolbar>
-        </AppBar>
+          </Button>
+          </NavLink>
+          <NavLink to="cart" className="underline">
+            <CartWidget />
+          </NavLink>
+
+        </Toolbar>
+      </AppBar>
     </div>
   )
 }

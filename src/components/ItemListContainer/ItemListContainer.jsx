@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getFetch } from "../../helpers/getFetch";
 import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
@@ -8,17 +9,30 @@ import ItemList from "../ItemList/ItemList";
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
+    const { categoriaId } = useParams()
 
     useEffect(() => {
-        getFetch
-            .then((respuesta) => {
-                console.log(respuesta);
-                return respuesta;
-            })
-            .then((resp) => setProductos(resp))
-            .catch((err) => console.log(err))
-            .finally(() => setLoading(false));
-    }, []);
+        if (categoriaId) {
+            getFetch
+                .then((respuesta) => {
+                    console.log(respuesta);
+                    return respuesta;
+                })
+                .then((resp) => setProductos( resp.filter(pro => pro.categoria===categoriaId) ))
+                .catch((err) => console.log(err))
+                .finally(() => setLoading(false));
+        } else {
+            getFetch
+                .then((respuesta) => {
+                    console.log(respuesta);
+                    return respuesta;
+                })
+                .then((resp) => setProductos(resp))
+                .catch((err) => console.log(err))
+                .finally(() => setLoading(false));
+        }
+
+    }, [categoriaId]);
 
     const onAdd = (cant) => {
         console.log(cant)
@@ -32,7 +46,7 @@ function ItemListContainer() {
     //         .then(resp => console.log(resp))
     // })
 
-    console.log(productos)
+    console.log(categoriaId)
 
     return (
         <>

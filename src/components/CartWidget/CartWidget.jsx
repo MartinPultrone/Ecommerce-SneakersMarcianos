@@ -3,9 +3,9 @@ import './CartWidget.css'
 
 const CartWidget = () => {
     return(
-        <div className="cart-container">
+        <button className="cart-container">
             <ShoppingCartIcon />
-        </div>
+        </button>
     )
 }
 
