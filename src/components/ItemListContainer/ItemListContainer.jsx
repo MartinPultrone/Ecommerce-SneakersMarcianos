@@ -16,7 +16,7 @@ function ItemListContainer() {
         if (categoriaId) {
             getFetch
                 .then((respuesta) => {
-                    console.log(respuesta);
+                    // console.log(respuesta);
                     return respuesta;
                 })
                 .then((resp) => setProductos( resp.filter(pro => pro.categoria===categoriaId) ))
