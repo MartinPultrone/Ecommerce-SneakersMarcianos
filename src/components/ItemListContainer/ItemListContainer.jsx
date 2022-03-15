@@ -25,7 +25,7 @@ function ItemListContainer() {
         } else {
             getFetch
                 .then((respuesta) => {
-                    console.log(respuesta);
+                    // console.log(respuesta);
                     return respuesta;
                 })
                 .then((resp) => setProductos(resp))
@@ -47,7 +47,7 @@ function ItemListContainer() {
     //         .then(resp => console.log(resp))
     // })
 
-    console.log(categoriaId)
+    // console.log(categoriaId)
 
     return (
         <>

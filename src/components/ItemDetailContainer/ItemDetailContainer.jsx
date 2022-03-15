@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
     const { detalleId } = useParams()
-    console.log(detalleId)
+    // console.log(detalleId)
     useEffect(() => {
         getFetch
             .then(resp => setProducto(resp.find(prod => prod.id === detalleId)))
