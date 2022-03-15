@@ -28,17 +28,17 @@ const Navbar = () => {
               Home
             </Button>
           </NavLink>
-          <NavLink to="categoria/women" className="underline">
-          <Button variant="text" color="default">
-            Women Sneakers
-          </Button>
-          </NavLink>
-          <NavLink to="categoria/men" className="underline">
+          <NavLink to="categoria/Men" className="underline">
           <Button variant="text" color="default">
             Men Sneakers
           </Button>
           </NavLink>
-          <NavLink to="categoria/new" className="underline">
+          <NavLink to="categoria/Women" className="underline">
+          <Button variant="text" color="default">
+            Women Sneakers
+          </Button>
+          </NavLink>
+          <NavLink to="categoria/New" className="underline">
           <Button variant="text" color="default">
             New
           </Button>
