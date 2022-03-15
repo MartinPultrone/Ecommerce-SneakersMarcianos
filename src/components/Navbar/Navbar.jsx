@@ -44,9 +44,8 @@ const Navbar = () => {
           </Button>
           </NavLink>
           <NavLink to="cart" className="underline">
-            <CartWidget />
+            <CartWidget className="underline"/>
           </NavLink>
-
         </Toolbar>
       </AppBar>
     </div>

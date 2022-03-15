@@ -3,7 +3,8 @@
     color: black;
 }
 
-.underline:hover {
+.underline:hover{
+    text-decoration: none;
     color: black;
 }
 

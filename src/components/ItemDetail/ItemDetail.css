@@ -25,3 +25,9 @@ img{
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+.description{
+    margin-left: 400px;
+    margin-top: -13rem;
+    padding: 3rem;
+}

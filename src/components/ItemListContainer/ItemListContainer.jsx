@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getFetch } from "../../helpers/getFetch";
 import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function ItemListContainer() {
@@ -50,7 +51,7 @@ function ItemListContainer() {
 
     return (
         <>
-            {loading ? <h1>Cargando...</h1>
+            {loading ? <ClipLoader color={"purple"} loading={loading} size={60} />
                 :
 
                 <ItemList productos={productos} />
