@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 2500)
+        }, 2000)
     }, [])
 
     const [producto, setProducto] = useState({})

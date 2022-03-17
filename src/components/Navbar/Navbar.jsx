@@ -2,8 +2,6 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import MenuIcon from '@material-ui/icons/Menu'
-import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import CartWidget from '../CartWidget/CartWidget'
 import { NavLink } from 'react-router-dom'
@@ -15,9 +13,6 @@ const Navbar = () => {
     <div>
       <AppBar position="relative" color="secondary">
         <Toolbar>
-          <IconButton>
-            <MenuIcon />
-          </IconButton>
           <NavLink to="/" className="underline">
           <Typography variant="h5">
             Marcianos Sneakers

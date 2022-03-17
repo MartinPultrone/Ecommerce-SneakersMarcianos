@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getFetch } from "../../helpers/getFetch";
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -35,9 +34,9 @@ function ItemListContainer() {
 
     }, [categoriaId]);
 
-    const onAdd = (cant) => {
-        console.log(cant)
-    }
+    // const onAdd = (cant) => {
+    //     console.log(cant)
+    // }
 
 
     // useEffect(() => {
@@ -57,7 +56,7 @@ function ItemListContainer() {
                 <ItemList productos={productos} />
 
             }
-            <ItemCount initial={0} stock={10} onAdd={onAdd} />
+            {/* <ItemCount initial={0} stock={10} onAdd={onAdd} /> */}
         </>
     )
 }
