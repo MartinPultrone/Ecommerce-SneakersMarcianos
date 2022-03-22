@@ -1,31 +1,16 @@
-import React from 'react'
-import ClipLoader from "react-spinners/ClipLoader";
-import { useState, useEffect } from 'react';
+import { useCartContext } from '../Context/CartContext';
 
-const Cart = () => {
-
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-        }, 1500)
-    }, [])
-
+function Cart() {
+    const { cartList, vaciarCart } = useCartContext()
+    console.log(cartList)
     return (
-        <>
-        {
-            loading ?
-
-            <ClipLoader color={"purple"} loading={loading} size={60} />
-
-            :
-
-            <div>Cart</div>
-        }
-        </>
+        <div>
+            {cartList.map(item => <li>Nombre: {item.name} 
+            <li>Precio: {item.price}</li>
+            <li>Cantidad: {item.cantidad}</li> 
+            <img alt="Foto Producto" src={item.foto}></img></li>)}
+            <button className="btn btn-outline-primary" onClick={vaciarCart}>Vaciar Carrito</button>
+        </div>
     )
 }
-
 export default Cart

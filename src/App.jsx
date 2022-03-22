@@ -6,13 +6,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import '../src/App.css'
 import Cart from "./components/Cart/Cart";
+import CartContextProvider from "./components/Context/CartContext";
+
+
 
 function App() {
   return (
+
+
+    <CartContextProvider>
     <BrowserRouter>
     <div className="App">
     <Navbar />
-
       <Routes>
         <Route path="/" element={<ItemListContainer/>}/>
         <Route path="/categoria/:categoriaId" element={<ItemListContainer/>}/>
@@ -22,7 +27,8 @@ function App() {
       </Routes> 
     </div>
     </BrowserRouter>
-  );
+    </CartContextProvider>
+  )
 }
 
 export default App;

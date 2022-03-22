@@ -1,3 +1,5 @@
+Proyecto E-Commerce de Zapatillas/Sneakers hecho en React, utilizando todos los conocimientos que fui adquiriendo día a día.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
