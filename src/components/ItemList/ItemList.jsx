@@ -1,15 +1,26 @@
 import { memo } from 'react'
 import Item from "../Item/Item"
 
-// memo( ()=>{} ) es el componente // memo( ()=>{}, fn ) es el componente
+
 const ItemList = memo(
-    ({productos}) => {
+    ({ productos }) => {
         console.log('ItemList')
         return (
-        productos.map((prod) => <Item key={prod.id} prod={prod} /> )
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap'
+                }}
+            >
+                {productos.map((prod) =>
+                    <Item key={prod.id} prod={prod} />
+                )}
+            </div>
         )
+
     }
-, (oldProps, newProps) => oldProps.productos.length === newProps.productos.length)
+    , (oldProps, newProps) => oldProps.productos.length === newProps.productos.length)
 
 
 export default ItemList
