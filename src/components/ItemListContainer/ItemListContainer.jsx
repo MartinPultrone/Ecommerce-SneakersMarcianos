@@ -11,31 +11,6 @@ function ItemListContainer() {
     const [loading, setLoading] = useState(true)
     const { categoriaId } = useParams()
 
-    // useEffect(() => {
-    //     if (categoriaId) {
-    //         getFetch
-    //             .then((respuesta) => {
-    //                 // console.log(respuesta);
-    //                 return respuesta;
-    //             })
-    //             .then((resp) => setProductos(resp.filter(pro => pro.categoria === categoriaId)))
-    //             .catch((err) => console.log(err))
-    //             .finally(() => setLoading(false));
-    //     } else {
-    //         getFetch
-    //             .then((respuesta) => {
-    //                 // console.log(respuesta);
-    //                 return respuesta;
-    //             })
-    //             .then((resp) => setProductos(resp))
-    //             .catch((err) => console.log(err))
-    //             .finally(() => setLoading(false));
-    //     }
-
-    // }, [categoriaId]);
-
-
-
     useEffect(() => {
         const db = getFirestore()
         if (categoriaId) {
@@ -56,35 +31,12 @@ function ItemListContainer() {
     }, [categoriaId])
 
 
-
-
-
-    // useEffect(() => {
-    //     const db = getFirestore()
-    //     const queryDb = doc(db, 'items', detalleId)
-    //     getDoc(queryDb)
-    //     .then(resp => setProducto( { id: resp.id, ...resp.data() } ))
-
-    //     // .then(resp => console.log(resp))
-    // },[] )
-
-
-
-    // const onAdd = (cant) => {
-    //     console.log(cant)
-    // }
-
-    console.log(productos)
-
     return (
         <>
             {loading ? <ClipLoader color={"purple"} loading={loading} size={60} />
                 :
-
                 <ItemList productos={productos} />
-
             }
-            {/* <ItemCount initial={0} stock={10} onAdd={onAdd} /> */}
         </>
     )
 }

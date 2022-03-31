@@ -25,6 +25,7 @@ function CartContextProvider({children}) {
     const vaciarCart=()=>{
         setCartList( [])
     }
+
     return (
         <CartContext.Provider value={{
             cartList,
