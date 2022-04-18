@@ -11,7 +11,6 @@ const ItemDetail = ({ producto }) => {
     const { agregarCart, cartList } = useCartContext()
 
     const onAdd = cant =>{
-        console.log(cant)
         setCount(cant)
         agregarCart({ ...producto, cantidad: cant })
     }
@@ -44,10 +43,5 @@ const ItemDetail = ({ producto }) => {
         </div>
     )
 }
-
-// const onAdd = (cant) => {
-//     console.log(cant)
-// }
-
 
 export default ItemDetail

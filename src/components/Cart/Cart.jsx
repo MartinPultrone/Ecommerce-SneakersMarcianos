@@ -31,7 +31,6 @@ function Cart() {
 
             return { id, nombre, precio }
         })
-        console.log(orden)
 
         const db = getFirestore()
         const queryCollectionSet = collection(db, 'orders')
@@ -48,7 +47,10 @@ function Cart() {
         })
     }
 
-    console.log(dataForm)
+    const calcularTotal = () => {
+        return cartList.reduce((prevValue, currValue) => { return prevValue + currValue.price * currValue.cantidad }, 0)
+    }
+
     return (
 
         <div>
@@ -58,6 +60,13 @@ function Cart() {
                     <li>Cantidad: {item.cantidad}</li>
                     <img alt="Foto Producto" src={item.foto}></img></li>)}
             </div>
+
+            <div>
+                <h5>
+                    El Total De La Compra Es: {calcularTotal()}
+                </h5>
+            </div>
+            <button onClick={vaciarCart}>Vaciar Carrito</button>
             <form
                 onSubmit={generarOrden}
             >
@@ -83,7 +92,8 @@ function Cart() {
                     onChange={handleChange}
                 /><br />
                 <button>Terminar Compra</button>
-                <button onClick={vaciarCart}>Vaciar Carrito</button>
+
+
             </form>
             {id.length !== '' && `el id de la compra es: ${id}`}
         </div>
