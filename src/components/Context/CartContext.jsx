@@ -23,7 +23,7 @@ function CartContextProvider({ children }) {
     };
 
     const cantidadTotalItem = () => {
-        return cartList.reduce((acum, prod) => (acum += prod.cantidad), 0); // acum = acum + cantidad
+        return cartList.reduce((acum, prod) => (acum += prod.cantidad), 0); 
     };
 
     const removeItem = (id) => {
